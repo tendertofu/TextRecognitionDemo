@@ -6,8 +6,11 @@ import android.util.Log
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams
 import android.widget.Button
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.FragmentContainerView
+import org.opencv.android.NativeCameraView.TAG
+import org.opencv.android.OpenCVLoader
 
 
 class MainActivity : AppCompatActivity() {
@@ -30,14 +33,14 @@ class MainActivity : AppCompatActivity() {
 
         //Load openCV
 
-        /*
-        if (!OpenCVLoader.initDebug()) {
-            Log.e(TAG, "OpenCV initialization failed.")
-        } else {
-            Log.d(TAG, "OpenCV initialization succeeded.")
-        }
 
-         */
+        if (!OpenCVLoader.initDebug()) {
+            Toast.makeText(applicationContext, "OpenCV initialization failed", Toast.LENGTH_SHORT).show()
+            //Log.e(TAG, "OpenCV initialization failed.")
+        } else {
+            Toast.makeText(applicationContext, "OpenCV initialization success", Toast.LENGTH_SHORT).show()
+            //Log.d(TAG, "OpenCV initialization succeeded.")
+        }
 
 
         button.setOnClickListener{

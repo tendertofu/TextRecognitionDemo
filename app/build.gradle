@@ -36,7 +36,9 @@ android {
     buildFeatures {
         viewBinding true
     }
+
 }
+
 
 dependencies {
     def camerax_version = "1.2.2"
@@ -46,7 +48,7 @@ dependencies {
     //implementation "androidx.camera:camera-video:${camerax_version}"
     implementation "androidx.camera:camera-view:${camerax_version}"
     //for OpenCV
-    //implementation project(':sdk')
+    implementation project(":opencv")
 
     // MLKIT To recognize Latin script
     implementation 'com.google.mlkit:text-recognition:16.0.0'
